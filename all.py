@@ -84,12 +84,12 @@ def info():
         web_title = (html.find('span', class_="title-span")).get_text()
         web_text = html.find('div', class_="content-detail")
         contents = (web_text.find_all('p'))
-        datas = ''
+        datas = '' #文章内容
         for item in contents:
             data = item.get_text()
             datas += data
         all = (web_title,path,datas,link)
-        insert(all)
+        insert(all) #把网页标题、图片保存在计算机保存的路径，文章内容以及文章链接全都放进数据库中
 
 def get_imgs():
     a = 1
